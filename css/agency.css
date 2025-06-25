@@ -261,15 +261,25 @@ fieldset[disabled] .btn-xl.active {
 }
 
 header {
-    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url("../img/Atlanta_cityscape.jpg");
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)),
+                url("../img/venue_city.jpeg");
     background-repeat: no-repeat;
     background-position: center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
     text-align: center;
     color: #7F7F7F;
+    padding-bottom: 3rem; /* Ensure room for caption */
+}
+
+.attribution {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 1.0rem;
+    color: #ccc;
+    background: rgba(0, 0, 0, 0.5); /* optional, for readability */
+    padding: 4px 8px;
 }
 
 header .intro-text {
