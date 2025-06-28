@@ -262,7 +262,7 @@ fieldset[disabled] .btn-xl.active {
 
 header {
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)),
+    background:  linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
                 url("../img/venue_city.jpeg");
     background-repeat: no-repeat;
     background-position: center center;
