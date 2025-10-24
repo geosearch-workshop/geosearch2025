@@ -80,12 +80,78 @@
   font-size: 0.75rem;
   color: #ccc;
 }
+/* Make keynote speaker text stand out and match global font sizing */
+.program-schedule .text-muted a {
+  font-size: 1.1rem !important;
+  color: #007bff !important;
+  font-weight: 600;
+}
 
+#Program table {
+  font-size: 1.25rem;
+}
+
+#Program th {
+  font-size: 1.3rem;
+  background-color: #343a40;
+  color: #fff;
+  text-align: center;
+}
+
+#Program td {
+  padding: 1rem;
+  vertical-align: middle;
+}
+
+#Program .table-warning {
+  background-color: #fff3cd !important;
+}
+
+#Program .table-secondary {
+  background-color: #e9ecef !important;
+}
+
+#Program a {
+  color: #0056b3 !important;
+  font-weight: 700;
+}
+
+#Program a:hover {
+  color: #003f88 !important;
+  text-decoration: underline;
+}
+
+.team-member img {
+  width: 165px;
+  height: 165px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 0 auto;
+  display: block;
+}
 </style>
+
 </head>
 
 <body id="page-top" class="index">
-
+<!-- Top-right notification popup -->
+<div id="program-notice" style="
+    position: fixed;
+    top: 80px;  /* below navbar */
+    right: 20px;
+    width: 300px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    padding: 15px 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 2000;
+    font-weight: 600;
+">
+    📢 The workshop program has now been added!
+    <span id="close-notice" style="float:right; cursor:pointer; font-weight:700;">&times;</span>
+</div>
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -196,106 +262,102 @@
         </div>
     </section>
 
-  
-<section id="Program" class="bg-mid-gray">
+<section id="Program" class="bg-mid-gray" style="padding: 60px 0;">
   <div class="container">
-
-    <!-- Section Header -->
-    <div class="text-center mb-5">
-      <h2 class="section-heading text-uppercase" style="font-weight:700; letter-spacing:1px; font-size:2.2rem;">
-        Program
-      </h2>
-      <p class="text-muted mt-3" style="font-size:1.3rem;">
-        <b>Monday, November 03, 2025</b><br>
-        Think 4, Graduate by Hilton Minneapolis, Minneapolis, MN, USA
-      </p>
-      <p class="text-secondary" style="font-size:1.1rem;">
-        <i>(All times are in Minneapolis, MN local time)</i>
-      </p>
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading" style="font-size:2.2rem; font-weight:700;">Program</h2>
+      </div>
     </div>
 
-    <!-- Program Schedule -->
-    <div class="program-schedule mx-auto" style="max-width:900px;">
-
-      <div class="border-start border-4 border-primary ps-4 mb-4">
-        <h5 class="fw-bold mb-1 text-primary" style="font-size:1.25rem;">8:00 – 8:20 AM</h5>
-        <p class="mb-0" style="font-size:1.15rem;">Opening Remarks</p>
-      </div>
-
-      <div class="border-start border-4 border-primary ps-4 mb-4">
-        <h5 class="fw-bold mb-1 text-primary" style="font-size:1.25rem;">8:20 – 8:40 AM</h5>
-        <p class="mb-1" style="font-size:1.15rem;">
-          MulSAFER: A Framework for Extraction and Interpretation of Safe Mobility Paths from Multimodal Spatial Data
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <p class="large text-muted" style="font-size:1.7rem; font-weight:600;">
+          Monday, November 03, 2025 — Think 4, Graduate by Hilton Minneapolis, Minneapolis, MN, USA
         </p>
-        <p class="text-muted mb-0" style="font-size:1.05rem;">
-          <i>Yi-Wen Hung, An-Syu Li, Shih-Chun Lin, Han-Chi Chen, Chi-Tsun Lin and Yi-Chung Chen</i>
+        <p class="large text-muted" style="font-size:1.7rem; font-weight:600;">
+          Program (Minneapolis, MN Local Time)
         </p>
-      </div>
 
-      <div class="border-start border-4 border-primary ps-4 mb-4">
-        <h5 class="fw-bold mb-1 text-primary" style="font-size:1.25rem;">8:40 – 9:00 AM</h5>
-        <p class="mb-1" style="font-size:1.15rem;">Experimental Evaluation of Compression for Geospatial Trajectory Data</p>
-        <p class="text-muted mb-0" style="font-size:1.05rem;"><i>Siyu Chen and John Krumm</i></p>
+        <div class="table-responsive mt-4">
+          <table class="table table-striped align-middle" style="font-size:1.55rem;">
+            <thead class="table-dark">
+              <tr>
+                <th style="width: 15%; font-size:1.8rem;">Time</th>
+                <th style="width: 55%; font-size:1.8rem;">Title</th>
+                <th style="width: 30%; font-size:1.8rem;">Authors</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>8:00–8:20</td>
+                <td><b>Opening Remarks</b></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>8:20–8:40</td>
+                <td>MulSAFER: A Framework for Extraction and Interpretation of Safe Mobility Paths from Multimodal Spatial Data</td>
+                <td><i>Yi-Wen Hung, An-Syu Li, Shih-Chun Lin, Han-Chi Chen, Chi-Tsun Lin, Yi-Chung Chen</i></td>
+              </tr>
+              <tr>
+                <td>8:40–9:00</td>
+                <td>Experimental Evaluation of Compression for Geospatial Trajectory Data</td>
+                <td><i>Siyu Chen and John Krumm</i></td>
+              </tr>
+              <tr>
+                <td>9:00–9:20</td>
+                <td>GeoSearchPredict: Predicting Search Term Popularity</td>
+                <td><i>Nathan Blanken and Hanan Samet</i></td>
+              </tr>
+              <tr>
+                <td>9:20–9:40</td>
+                <td>Accelerating Discovery and Retrieval of Heterogeneous Geospatial Data: A Scalable Location-Centric Database Architecture for Disaster Response and Recovery</td>
+                <td><i>Ardavan Sassani, Ryan Garland, Anshul Gupta, Ramita Rathore, Sara Edwards, Armin R. Mikler, Chetan Tiwari</i></td>
+              </tr>
+              <tr>
+                <td>9:40–10:00</td>
+                <td>DistRAG: Towards Distance-Based Spatial Reasoning in LLMs</td>
+                <td><i>Nicole Schneider, Nandini Ramachandran, Kent O'Sullivan, Hanan Samet</i></td>
+              </tr>
+              <tr class="table-secondary">
+                <td>10:00–10:30</td>
+                <td><b>Coffee Break</b></td>
+                <td></td>
+              </tr>
+              <tr class="table-warning">
+                <td>10:30–11:10</td>
+                <td>
+                  <b>Keynote</b> – Bridging Language and Geography for Geospatial Data Mining<br>
+                  <a href="https://cse.umn.edu/cs/yao-yi-chiang" target="_blank" style="color:#0056b3; text-decoration:none; font-weight:700; font-size:1.55rem;">
+                    Dr. Yao-Yi Chiang
+                  </a>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>11:10–11:30</td>
+                <td>Detecting Legend Items on Historical Maps Using GPT-4o with In-Context Learning</td>
+                <td><i>Sofia Kirsanova, Yao-Yi Chiang, Weiwei Duan</i></td>
+              </tr>
+              <tr>
+                <td>11:30–11:50</td>
+                <td><b>Discussion / Collaboration Opportunities</b></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>11:50–12:00</td>
+                <td><b>Closing Remarks</b></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-
-      <div class="border-start border-4 border-primary ps-4 mb-4">
-        <h5 class="fw-bold mb-1 text-primary" style="font-size:1.25rem;">9:00 – 9:20 AM</h5>
-        <p class="mb-1" style="font-size:1.15rem;">GeoSearchPredict: Predicting Search Term Popularity</p>
-        <p class="text-muted mb-0" style="font-size:1.05rem;"><i>Nathan Blanken and Hanan Samet</i></p>
-      </div>
-
-      <div class="border-start border-4 border-primary ps-4 mb-4">
-        <h5 class="fw-bold mb-1 text-primary" style="font-size:1.25rem;">9:20 – 9:40 AM</h5>
-        <p class="mb-1" style="font-size:1.15rem;">
-          Accelerating Discovery and Retrieval of Heterogeneous Geospatial Data: A Scalable Location-Centric Database Architecture for Disaster Response and Recovery
-        </p>
-        <p class="text-muted mb-0" style="font-size:1.05rem;">
-          <i>Ardavan Sassani, Ryan Garland, Anshul Gupta, Ramita Rathore, Sara Edwards, Armin R Mikler and Chetan Tiwari</i>
-        </p>
-      </div>
-
-      <div class="border-start border-4 border-primary ps-4 mb-4">
-        <h5 class="fw-bold mb-1 text-primary" style="font-size:1.25rem;">9:40 – 10:00 AM</h5>
-        <p class="mb-1" style="font-size:1.15rem;">DistRAG: Towards Distance-Based Spatial Reasoning in LLMs</p>
-        <p class="text-muted mb-0" style="font-size:1.05rem;">
-          <i>Nicole Schneider, Nandini Ramachandran, Kent O'Sullivan and Hanan Samet</i>
-        </p>
-      </div>
-
-      <div class="border-start border-4 border-warning ps-4 mb-4">
-        <h5 class="fw-bold mb-1 text-warning" style="font-size:1.25rem;">10:00 – 10:30 AM</h5>
-        <p class="mb-0" style="font-size:1.15rem;"><b>Coffee Break ☕</b></p>
-      </div>
-
-      <div class="border-start border-4 border-success ps-4 mb-4">
-        <h5 class="fw-bold mb-1 text-success" style="font-size:1.25rem;">10:30 – 11:10 AM</h5>
-        <p class="mb-1" style="font-size:1.15rem;">
-          <b>Keynote</b> – Bridging Language and Geography for Geospatial Data Mining
-        </p>
-        <p class="text-muted mb-0" style="font-size:1.05rem;">
-          <i><b><a href="https://cse.umn.edu/cs/yao-yi-chiang" target="_blank" style="text-decoration:none;">Dr. Yao-Yi Chiang</a></b></i>
-        </p>
-      </div>
-
-      <div class="border-start border-4 border-primary ps-4 mb-4">
-        <h5 class="fw-bold mb-1 text-primary" style="font-size:1.25rem;">11:10 – 11:30 AM</h5>
-        <p class="mb-1" style="font-size:1.15rem;">Detecting Legend Items on Historical Maps Using GPT-4o with In-Context Learning</p>
-        <p class="text-muted mb-0" style="font-size:1.05rem;"><i>Sofia Kirsanova, Yao-Yi Chiang and Weiwei Duan</i></p>
-      </div>
-
-      <div class="border-start border-4 border-secondary ps-4 mb-4">
-        <h5 class="fw-bold mb-1 text-secondary" style="font-size:1.25rem;">11:30 – 11:50 AM</h5>
-        <p class="mb-0" style="font-size:1.15rem;">Discussion / Collaboration Opportunities</p>
-      </div>
-
-      <div class="border-start border-4 border-dark ps-4">
-        <h5 class="fw-bold mb-1 text-dark" style="font-size:1.25rem;">11:50 – 12:00 PM</h5>
-        <p class="mb-0" style="font-size:1.15rem;">Closing Remarks</p>
-      </div>
-
     </div>
   </div>
 </section>
+
+
 
 
 
@@ -545,7 +607,18 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/agency.js"></script>
+<script>
 
+// Click anywhere on the banner (except the close button) to go to Program
+document.getElementById('program-notice').onclick = function() {
+    const programSection = document.querySelector('#Program');
+    if (programSection) {
+        programSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    document.getElementById('program-notice').style.display = 'none';
+
+}
+</script>
 </body>
 
 </html>
